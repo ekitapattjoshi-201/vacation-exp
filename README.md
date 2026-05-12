@@ -66,26 +66,28 @@ The project demonstrates component-based architecture, routing, form handling, v
 
 # Project Structure
 
+```bash
 Vacation-EXP/
 │
 ├── public/
-│ └── index.html
+│   └── index.html
 │
 ├── src/
-│ │
-│ ├── component/
-│ │ │
-│ │ ├── login/
-│ │ │ ├── LoginForm.js
-│ │ │ └── login.css
-│ │ │
-│ │ └── registration/
-│ │ ├── RegistrationForm.js
-│ │ └── registration.css
-│ │
-│ ├── App.js
-│ └── index.js
+│   │
+│   ├── component/
+│   │   │
+│   │   ├── login/
+│   │   │   ├── LoginForm.js
+│   │   │   └── login.css
+│   │   │
+│   │   └── registration/
+│   │       ├── RegistrationForm.js
+│   │       └── registration.css
+│   │
+│   ├── App.js
+│   └── index.js
 │
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
