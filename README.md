@@ -91,4 +91,7 @@ Vacation-EXP/
 ├── package-lock.json
 └── README.md
 ```
-## UI Improvements Coming Soon
+## Upcoming Features
+- Navbar
+- Travel Packages
+- Dashboard
