@@ -1,72 +1,38 @@
-# Vacation EXP
+# Vacation-EXP ✈️
 
-Vacation EXP is a React-based frontend authentication project designed to provide a modern and responsive user experience for user login and registration functionalities.
+Vacation-EXP is an online travel experience portal designed to provide curated travel packages based on user interests such as adventure, culture, food, hill stations, safaris, and more.
 
-The project demonstrates component-based architecture, routing, form handling, validation, responsive styling, and authentication UI workflows using React.
+The platform aims to provide a smooth and user-friendly travel experience.
 
 ---
 
-# Features
+## Features
 
-## Authentication UI
+### Authentication Module
 
 - User Login Form
 - User Registration Form
-- Responsive Authentication Pages
-- Clean and Modern UI Design
-
-## Login Functionalities
-
-- Email Input Field
-- Password Input Field
-- Login Form Submission
-- Google Login Button
-- Email Login Option
-- Forgot Password Link
-
-## Registration Functionalities
-
-- Name Input Field
-- Email Input Field
 - Password Validation
 - Confirm Password Validation
 - Password Visibility Toggle
-- Date of Birth Selection
-- User Role Selection
-- Terms and Conditions Checkbox
-- Google reCAPTCHA Integration
+- Google Login UI
+- Email Login UI
+- Terms & Conditions Checkbox
+- CAPTCHA Integration
 
-## Routing
+### UI Enhancements
 
-- React Router DOM Navigation
-- Separate Login and Registration Routes
-
-## UI Features
-
-- Responsive Layout
-- Form Styling with CSS
-- Social Authentication Buttons
-- Interactive Hover Effects
-- Input Field Styling
-- Mobile Responsive Design
+- Responsive Login Page
+- Responsive Registration Page
+- Global Styling Configuration
+- Basic Navbar Component
+- Improved Folder Structure
 
 ---
 
-# Tech Stack
+## Project Structure
 
-- React.js
-- React DOM
-- React Router DOM
-- React Icons
-- React Google reCAPTCHA
-- CSS3
-- JavaScript (ES6+)
-
----
-
-# Project Structure
-
-```bash
+```text
 Vacation-EXP/
 │
 ├── public/
@@ -74,20 +40,95 @@ Vacation-EXP/
 │
 ├── src/
 │   │
+│   ├── assets/
+│   │
 │   ├── component/
+│   │   │
+│   │   ├── cards/
+│   │   ├── common/
+│   │   ├── footer/
 │   │   │
 │   │   ├── login/
 │   │   │   ├── LoginForm.js
 │   │   │   └── login.css
 │   │   │
+│   │   ├── navbar/
+│   │   │   ├── navbar.js
+│   │   │   └── navbar.css
+│   │   │
 │   │   └── registration/
 │   │       ├── RegistrationForm.js
 │   │       └── registration.css
 │   │
+│   ├── image/
+│   ├── pages/
+│   ├── services/
+│   ├── styles/
+│   │   └── global.css
+│   ├── utils/
+│   │
 │   ├── App.js
 │   └── index.js
 │
-├── package.json
+├── .gitignore
 ├── package-lock.json
+├── package.json
 └── README.md
 ```
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- React.js
+- JavaScript (ES6+)
+- CSS3
+
+### Libraries Used
+
+- React Router DOM
+- React Google reCAPTCHA
+- React Icons
+- Material UI Icons
+
+---
+
+## Installation & Setup
+
+### Clone the repository
+
+```bash
+git clone git@github.com:ekitapattjoshi-201/vacation-exp.git
+```
+
+### Navigate to project folder
+
+```bash
+cd vacation-exp
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the project
+
+```bash
+npm start
+```
+
+---
+
+## Future Enhancements
+
+- Travel Package Listing
+- Booking System
+- User Dashboard
+- Authentication Backend
+- Payment Gateway
+- API Integration
+- Wishlist Feature
