@@ -57,9 +57,9 @@
 
   cursor: pointer;
 
-  transition:
+  /* transition:
     color 0.3s ease,
-    transform 0.2s ease;
+    transform 0.2s ease; */
 }
 
 .navbar__item:hover {
