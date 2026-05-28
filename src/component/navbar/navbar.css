@@ -5,6 +5,7 @@
 }
 
 .navbar__container {
+  font-family: Arial, sans-serif;
   max-width: 140rem;
   margin: 0 auto;
   padding: 1.8rem 3rem;
@@ -54,12 +55,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #4b5563;
-
   cursor: pointer;
-
-  /* transition:
-    color 0.3s ease,
-    transform 0.2s ease; */
 }
 
 .navbar__item:hover {
