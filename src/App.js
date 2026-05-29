@@ -21,16 +21,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RegistrationForm from "./component/registration/RegistrationForm.js";
 import LoginForm from "./component/login/LoginForm.js";
 import Navbar from "./component/navbar/navbar.js";
+import Footer from "./component/footer/footer.js";
 
 const App = () => {
   return (
     <Router>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/register" element={<RegistrationForm />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
