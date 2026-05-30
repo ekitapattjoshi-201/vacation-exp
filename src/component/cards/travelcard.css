@@ -1,0 +1,80 @@
+.travel-card {
+  padding: 5rem;
+  background-color: #f8fafc;
+}
+
+.travel-card__heading {
+  text-align: center;
+  font-size: 3rem;
+  color: #1f2937;
+  margin-bottom: 3rem;
+}
+
+.travel-card__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.travel-card__item {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.travel-card__item:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1rem 2rem rgba(15, 118, 110, 0.15);
+}
+
+.travel-card__image {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+}
+
+.travel-card__content {
+  padding: 2rem;
+}
+
+.travel-card__content h3 {
+  margin: 0;
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.travel-card__content p {
+  color: #6b7280;
+  margin: 1rem 0 2rem;
+}
+
+.travel-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.travel-card__bottom span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.travel-card__bottom button {
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  background-color: #0f766e;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.travel-card__bottom button:hover {
+  background-color: #115e59;
+}
