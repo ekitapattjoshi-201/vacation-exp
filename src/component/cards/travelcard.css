@@ -11,24 +11,21 @@
 }
 
 .travel-card__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .travel-card__item {
+  width: 35rem;
   background-color: #ffffff;
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
 }
 
 .travel-card__item:hover {
-  transform: translateY(-0.5rem);
   box-shadow: 0 1rem 2rem rgba(15, 118, 110, 0.15);
 }
 
