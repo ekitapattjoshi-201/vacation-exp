@@ -1,4 +1,12 @@
+import { useState } from "react";
 import "./travelcard.css";
+import { HugeiconsIcon } from "@hugeicons/react";
+
+import {
+    ArrowLeft01Icon,
+    ArrowRight01Icon,
+} from "@hugeicons/core-free-icons";
+
 
 const TravelCard = () => {
     const packages = [
@@ -28,36 +36,66 @@ const TravelCard = () => {
         },
     ];
 
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handlePrevious = () => {
+        setCurrentIndex((prev) =>
+            prev === 0 ? packages.length - 1 : prev - 1
+        );
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prev) =>
+            prev === packages.length - 1 ? 0 : prev + 1
+        );
+    };
+
+    const currentPackage = packages[currentIndex];
+
     return (
         <div className="travel-card">
             <h2 className="travel-card__heading">
                 Popular Travel Packages
             </h2>
 
-            <div className="travel-card__container">
-                {packages.map((item) => (
-                    <div className="travel-card__item" key={item.id}>
-                        <img
-                            src={item.image}
-                            alt={item.title}
-                            className="travel-card__image"
-                        />
+            <div className="travel-card__item">
+                <img
+                    src={currentPackage.image}
+                    alt={currentPackage.title}
+                    className="travel-card__image"
+                />
 
-                        <div className="travel-card__content">
-                            <h3>{item.title}</h3>
+                <div className="travel-card__content">
+                    <h3>{currentPackage.title}</h3>
+                    <p>{currentPackage.description}</p>
 
-                            <p>{item.description}</p>
-
-                            <div className="travel-card__bottom">
-                                <span>{item.price}</span>
-
-                                <button>
-                                    Book Now
-                                </button>
-                            </div>
-                        </div>
+                    <div className="travel-card__bottom">
+                        <span>{currentPackage.price}</span>
+                        <button>Book Now</button>
                     </div>
-                ))}
+                </div>
+
+                <div className="travel-card__controls">
+                    <button
+                        className="travel-card__arrow"
+                        onClick={handlePrevious}
+                    >
+                        <HugeiconsIcon
+                            icon={ArrowLeft01Icon}
+                            size={20}
+                        />
+                    </button>
+
+                    <button
+                        className="travel-card__arrow"
+                        onClick={handleNext}
+                    >
+                        <HugeiconsIcon
+                            icon={ArrowRight01Icon}
+                            size={20}
+                        />
+                    </button>
+                </div>
             </div>
         </div>
     );
