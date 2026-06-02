@@ -15,24 +15,24 @@ const TravelCard = () => {
             image:
                 "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86",
             title: "Goa Beach",
-            description: "Enjoy beaches and nightlife in Goa.",
-            price: "₹15,999",
+            description:
+                "Relax at beautiful beaches and enjoy nightlife.",
         },
         {
             id: 2,
             image:
                 "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-            title: "Kashmir Trip",
-            description: "Explore snowy mountains and valleys.",
-            price: "₹22,999",
+            title: "Kashmir",
+            description:
+                "Explore snowy mountains and scenic valleys.",
         },
         {
             id: 3,
             image:
                 "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b",
-            title: "Manali Adventure",
-            description: "Adventure trip with trekking and camping.",
-            price: "₹18,999",
+            title: "Manali",
+            description:
+                "Adventure, trekking, and mountain views.",
         },
     ];
 
@@ -69,10 +69,9 @@ const TravelCard = () => {
                     <h3>{currentPackage.title}</h3>
                     <p>{currentPackage.description}</p>
 
-                    <div className="travel-card__bottom">
-                        <span>{currentPackage.price}</span>
-                        <button>Book Now</button>
-                    </div>
+                    <button className="travel-card__button">
+                        Explore Destination
+                    </button>
                 </div>
 
                 <div className="travel-card__controls">

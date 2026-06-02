@@ -9,10 +9,12 @@ import LoginForm from "./component/login/LoginForm.js";
 import Navbar from "./component/navbar/navbar.js";
 import Footer from "./component/footer/footer.js";
 import TravelCard from "./component/cards/travelcard.js";
+import Hero from "./component/hero/hero.js";
+import { Fragment } from "react";
 
 const Home = () => {
   return (
-    <TravelCard />
+    <Fragment><Hero /><TravelCard /></Fragment>
   );
 };
 
