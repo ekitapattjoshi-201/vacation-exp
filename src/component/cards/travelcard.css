@@ -1,5 +1,5 @@
 .travel-card {
-  padding: 5rem;
+  padding: 5rem 2rem;
   background-color: #f8fafc;
 }
 
@@ -12,17 +12,19 @@
 
 .travel-card__item {
   position: relative;
+  width: 100%;
   max-width: 100rem;
   margin: 0 auto;
   border-radius: 2rem;
   overflow: hidden;
-
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.1);
 }
 
 .travel-card__image {
   width: 100%;
-  height: 50rem;
+  height: auto;
+  max-height: 50rem;
+  min-height: 30rem;
   object-fit: cover;
 }
 
@@ -30,7 +32,7 @@
   position: absolute;
   bottom: 3rem;
   left: 3rem;
-
+  width: 90%;
   max-width: 50rem;
   color: #ffffff;
 }
@@ -49,17 +51,12 @@
 .travel-card__button {
   border: none;
   border-radius: 1rem;
-
   padding: 1rem 2rem;
-
   background-color: #0f766e;
   color: #ffffff;
-
   font-size: 1.4rem;
   font-weight: 600;
-
   cursor: pointer;
-
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
@@ -74,10 +71,8 @@
   position: absolute;
   top: 50%;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
-
   padding: 0 2rem;
   transform: translateY(-50%);
 }
@@ -86,18 +81,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: rgba(15, 118, 110, 0.9);
-
   color: #ffffff;
   border: none;
-
-  width: 5rem;
-  height: 5rem;
-
+  width: 4.5rem;
+  height: 4.5rem;
   border-radius: 50%;
   cursor: pointer;
-
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
