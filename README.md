@@ -1,12 +1,21 @@
 # Vacation-EXP ✈️
 
-Vacation-EXP is an online travel experience portal designed to provide curated travel packages based on user interests such as adventure, culture, food, hill stations, safaris, and more.
+Vacation-EXP is an online travel experience portal designed to provide curated travel packages based on user interests such as adventure, culture, food, hill stations, safaris, beaches, and more.
 
-The platform aims to provide a smooth and user-friendly travel experience.
+The platform aims to provide a smooth, responsive, and user-friendly travel experience where users can explore destinations and book customized travel experiences.
 
 ---
 
 ## Features
+
+### Home Page
+
+- Responsive Navbar
+- Hero Section
+- Travel Packages Carousel
+- Popular Travel Package Cards
+- Responsive Footer
+- Clean and Modern UI
 
 ### Authentication Module
 
@@ -24,8 +33,9 @@ The platform aims to provide a smooth and user-friendly travel experience.
 
 - Responsive Login Page
 - Responsive Registration Page
+- Responsive Travel Cards
 - Global Styling Configuration
-- Basic Navbar Component
+- Mobile-Friendly Design
 - Improved Folder Structure
 
 ---
@@ -45,8 +55,16 @@ Vacation-EXP/
 │   ├── component/
 │   │   │
 │   │   ├── cards/
-│   │   ├── common/
+│   │   │   ├── travelcard.js
+│   │   │   └── travelcard.css
+│   │   │
 │   │   ├── footer/
+│   │   │   ├── footer.js
+│   │   │   └── footer.css
+│   │   │
+│   │   ├── hero/
+│   │   │   ├── hero.js
+│   │   │   └── hero.css
 │   │   │
 │   │   ├── login/
 │   │   │   ├── LoginForm.js
@@ -56,16 +74,18 @@ Vacation-EXP/
 │   │   │   ├── navbar.js
 │   │   │   └── navbar.css
 │   │   │
+│   │   ├── packages/
+│   │   │   ├── packages.js
+│   │   │   └── packages.css
+│   │   │
 │   │   └── registration/
 │   │       ├── RegistrationForm.js
 │   │       └── registration.css
 │   │
-│   ├── image/
 │   ├── pages/
 │   ├── services/
 │   ├── styles/
 │   │   └── global.css
-│   ├── utils/
 │   │
 │   ├── App.js
 │   └── index.js
@@ -91,44 +111,77 @@ Vacation-EXP/
 - React Router DOM
 - React Google reCAPTCHA
 - React Icons
+- Huge Icons
 - Material UI Icons
 
 ---
 
 ## Installation & Setup
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
-git clone git@github.com:ekitapattjoshi-201/vacation-exp.git
+git clone https://github.com/ekitapattjoshi-201/vacation-exp.git
 ```
 
-### Navigate to project folder
+### Navigate to Project Folder
 
 ```bash
 cd vacation-exp
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Run the project
+### Run the Project
 
 ```bash
 npm start
 ```
 
+The application will run locally on:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## Screens Implemented
+
+- Home Page
+- Login Page
+- Registration Page
+- Travel Package Section
+- Hero Section
+
 ---
 
 ## Future Enhancements
 
-- Travel Package Listing
-- Booking System
+- Travel Package Booking System
+- Destination Search
 - User Dashboard
 - Authentication Backend
-- Payment Gateway
-- API Integration
+- Payment Gateway Integration
 - Wishlist Feature
+- Booking History
+- Admin Dashboard
+- API Integration
+
+---
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repository
+2. Create a new feature branch
+3. Commit your changes
+4. Push the branch
+5. Create a Pull Request
+
+---
