@@ -1,5 +1,6 @@
 import "./navbar.css";
 import { FaPlaneDeparture } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -21,13 +22,17 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar__actions">
-                    <button className="navbar__button navbar__button_secondary">
-                        Sign Up
-                    </button>
+                    <Link to="/register">
+                        <button className="navbar__button navbar__button--secondary">
+                            Sign Up
+                        </button>
+                    </Link>
 
-                    <button className="navbar__button">
-                        Login
-                    </button>
+                    <Link to="/login">
+                        <button className="navbar__button">
+                            Login
+                        </button>
+                    </Link>
                 </div>
 
             </div>
