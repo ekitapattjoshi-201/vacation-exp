@@ -97,3 +97,30 @@
   background-color: #115e59;
   transform: scale(1.05);
 }
+
+.travel-card__search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.travel-card__input {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1.2rem 2rem;
+  border: 0.1rem solid #d1d5db;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.travel-card__input:focus {
+  border-color: #0f766e;
+}
+
+.travel-card__empty {
+  text-align: center;
+  font-size: 2rem;
+  color: #6b7280;
+  margin-top: 2rem;
+}

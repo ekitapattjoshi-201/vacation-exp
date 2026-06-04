@@ -11,10 +11,18 @@ import Footer from "./component/footer/footer.js";
 import TravelCard from "./component/cards/travelcard.js";
 import Hero from "./component/hero/hero.js";
 import { Fragment } from "react";
+import PackageDetails from "./component/package details/packageDetails.js";
+import Category from "./component/category/category.js";
+import Testimonials from "./component/testimonials/testimonials.js";
 
 const Home = () => {
   return (
-    <Fragment><Hero /><TravelCard /></Fragment>
+    <Fragment>
+      <Hero />
+      <TravelCard />
+      <Category />
+      <Testimonials />
+    </Fragment>
   );
 };
 
@@ -37,6 +45,11 @@ const App = () => {
         <Route
           path="/register"
           element={<RegistrationForm />}
+        />
+
+        <Route
+          path="/package/:id"
+          element={<PackageDetails />}
         />
       </Routes>
 

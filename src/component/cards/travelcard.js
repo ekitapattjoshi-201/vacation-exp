@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./travelcard.css";
 import { HugeiconsIcon } from "@hugeicons/react";
 
@@ -6,7 +7,6 @@ import {
     ArrowLeft01Icon,
     ArrowRight01Icon,
 } from "@hugeicons/core-free-icons";
-
 
 const TravelCard = () => {
     const packages = [
@@ -37,20 +37,39 @@ const TravelCard = () => {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [search, setSearch] = useState("");
+
+    const filteredPackages = packages.filter(
+        (item) =>
+            item.title
+                .toLowerCase()
+                .includes(search.toLowerCase())
+    );
+
+    const displayPackages =
+        search.trim()
+            ? filteredPackages
+            : packages;
+
+    const currentPackage =
+        displayPackages[currentIndex] ||
+        displayPackages[0];
 
     const handlePrevious = () => {
         setCurrentIndex((prev) =>
-            prev === 0 ? packages.length - 1 : prev - 1
+            prev === 0
+                ? displayPackages.length - 1
+                : prev - 1
         );
     };
 
     const handleNext = () => {
         setCurrentIndex((prev) =>
-            prev === packages.length - 1 ? 0 : prev + 1
+            prev === displayPackages.length - 1
+                ? 0
+                : prev + 1
         );
     };
-
-    const currentPackage = packages[currentIndex];
 
     return (
         <div className="travel-card">
@@ -58,44 +77,72 @@ const TravelCard = () => {
                 Popular Travel Packages
             </h2>
 
-            <div className="travel-card__item">
-                <img
-                    src={currentPackage.image}
-                    alt={currentPackage.title}
-                    className="travel-card__image"
+            <div className="travel-card__search">
+                <input
+                    type="text"
+                    placeholder="Search destination..."
+                    value={search}
+                    onChange={(e) => {
+                        setSearch(e.target.value);
+                        setCurrentIndex(0);
+                    }}
+                    className="travel-card__input"
                 />
-
-                <div className="travel-card__content">
-                    <h3>{currentPackage.title}</h3>
-                    <p>{currentPackage.description}</p>
-
-                    <button className="travel-card__button">
-                        Explore Destination
-                    </button>
-                </div>
-
-                <div className="travel-card__controls">
-                    <button
-                        className="travel-card__arrow"
-                        onClick={handlePrevious}
-                    >
-                        <HugeiconsIcon
-                            icon={ArrowLeft01Icon}
-                            size={20}
-                        />
-                    </button>
-
-                    <button
-                        className="travel-card__arrow"
-                        onClick={handleNext}
-                    >
-                        <HugeiconsIcon
-                            icon={ArrowRight01Icon}
-                            size={20}
-                        />
-                    </button>
-                </div>
             </div>
+
+            {!currentPackage ? (
+                <p className="travel-card__empty">
+                    No destination found
+                </p>
+            ) : (
+                <div className="travel-card__item">
+                    <img
+                        src={currentPackage.image}
+                        alt={currentPackage.title}
+                        className="travel-card__image"
+                    />
+
+                    <div className="travel-card__content">
+                        <h3>
+                            {currentPackage.title}
+                        </h3>
+
+                        <p>
+                            {currentPackage.description}
+                        </p>
+
+                        <Link
+                            to={`/package/${currentPackage.id}`}
+                        >
+                            <button className="travel-card__button">
+                                Explore Destination
+                            </button>
+                        </Link>
+                    </div>
+
+                    <div className="travel-card__controls">
+                        <button
+                            className="travel-card__arrow"
+                            onClick={handlePrevious}
+                        >
+                            <HugeiconsIcon
+                                icon={ArrowLeft01Icon}
+                                size={20}
+                            />
+                        </button>
+
+                        <button
+                            className="travel-card__arrow"
+                            onClick={handleNext}
+                        >
+                            <HugeiconsIcon
+                                icon={ArrowRight01Icon}
+                                size={20}
+                            />
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
