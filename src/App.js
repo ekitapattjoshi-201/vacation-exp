@@ -14,6 +14,8 @@ import { Fragment } from "react";
 import PackageDetails from "./component/package details/packageDetails.js";
 import Category from "./component/category/category.js";
 import Testimonials from "./component/testimonials/testimonials.js";
+import Destinations from "./component/destinations/destinations.js";
+import Booking from "./component/booking/booking.js";
 
 const Home = () => {
   return (
@@ -22,6 +24,7 @@ const Home = () => {
       <TravelCard />
       <Category />
       <Testimonials />
+      <Destinations />
     </Fragment>
   );
 };
@@ -50,6 +53,11 @@ const App = () => {
         <Route
           path="/package/:id"
           element={<PackageDetails />}
+        />
+
+        <Route
+          path="/booking"
+          element={<Booking />}
         />
       </Routes>
 

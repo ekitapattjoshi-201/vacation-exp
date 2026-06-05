@@ -111,13 +111,21 @@ const TravelCard = () => {
                             {currentPackage.description}
                         </p>
 
-                        <Link
-                            to={`/package/${currentPackage.id}`}
-                        >
-                            <button className="travel-card__button">
-                                Explore Destination
-                            </button>
-                        </Link>
+                        <div className="travel-card__buttons">
+                            <Link
+                                to={`/package/${currentPackage.id}`}
+                            >
+                                <button className="travel-card__button">
+                                    Explore Destination
+                                </button>
+                            </Link>
+
+                            <Link to="/booking">
+                                <button className="travel-card__button">
+                                    Book Now
+                                </button>
+                            </Link>
+                        </div>
                     </div>
 
                     <div className="travel-card__controls">

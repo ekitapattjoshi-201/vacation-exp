@@ -62,6 +62,13 @@
     transform 0.2s ease;
 }
 
+.travel-card__buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
 .travel-card__button:hover {
   background-color: #115e59;
   transform: translateY(-0.2rem);
