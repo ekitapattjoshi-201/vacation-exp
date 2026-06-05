@@ -7,7 +7,7 @@ const Testimonials = () => {
             name: "Priya Sharma",
             review:
                 "Amazing Goa trip experience! Everything was well planned.",
-            rating: "⭐⭐⭐⭐⭐",
+            rating: 4,
         },
 
         {
@@ -15,7 +15,7 @@ const Testimonials = () => {
             name: "Suman Sahu",
             review:
                 "Smooth booking process and excellent hotel stay.",
-            rating: "⭐⭐⭐⭐⭐",
+            rating: 4,
         },
 
         {
@@ -23,7 +23,7 @@ const Testimonials = () => {
             name: "Deba Maharana",
             review:
                 "Loved the Kashmir package. Beautiful places and great service.",
-            rating: "⭐⭐⭐⭐⭐",
+            rating: 4.5,
         },
     ];
 
@@ -40,7 +40,23 @@ const Testimonials = () => {
                         key={item.id}
                     >
                         <div className="testimonials__rating">
-                            {item.rating}
+                            {[...Array(5)].map(
+                                (_, index) => (
+                                    <span
+                                        key={index}
+                                    >
+                                        {index <
+                                            Math.floor(
+                                                item.rating
+                                            )
+                                            ? "⭐"
+                                            : index <
+                                                item.rating
+                                                ? "✨"
+                                                : "☆"}
+                                    </span>
+                                )
+                            )}
                         </div>
 
                         <p className="testimonials__review">
