@@ -13,7 +13,12 @@ The platform aims to provide a smooth, responsive, and user-friendly travel expe
 - Responsive Navbar
 - Hero Section
 - Travel Packages Carousel
-- Popular Travel Package Cards
+- Destination Search Functionality
+- Package Details Page
+- Booking Page
+- Explore by Category Section
+- Testimonials Section
+- Popular Destinations Section
 - Responsive Footer
 - Clean and Modern UI
 
@@ -54,9 +59,21 @@ Vacation-EXP/
 │   │
 │   ├── component/
 │   │   │
+│   │   ├── booking/
+│   │   │   ├── booking.js
+│   │   │   └── booking.css
+│   │   │
 │   │   ├── cards/
 │   │   │   ├── travelcard.js
 │   │   │   └── travelcard.css
+│   │   │
+│   │   ├── category/
+│   │   │   ├── category.js
+│   │   │   └── category.css
+│   │   │
+│   │   ├── destinations/
+│   │   │   ├── destinations.js
+│   │   │   └── destinations.css
 │   │   │
 │   │   ├── footer/
 │   │   │   ├── footer.js
@@ -74,13 +91,17 @@ Vacation-EXP/
 │   │   │   ├── navbar.js
 │   │   │   └── navbar.css
 │   │   │
-│   │   ├── packages/
-│   │   │   ├── packages.js
-│   │   │   └── packages.css
+│   │   ├── package details/
+│   │   │   ├── packageDetails.js
+│   │   │   └── packagedetails.css
 │   │   │
-│   │   └── registration/
-│   │       ├── RegistrationForm.js
-│   │       └── registration.css
+│   │   ├── registration/
+│   │   │   ├── RegistrationForm.js
+│   │   │   └── registration.css
+│   │   │
+│   │   └── testimonials/
+│   │       ├── testimonials.js
+│   │       └── testimonials.css
 │   │
 │   ├── pages/
 │   ├── services/
@@ -155,21 +176,25 @@ http://localhost:3000
 - Home Page
 - Login Page
 - Registration Page
-- Travel Package Section
 - Hero Section
+- Travel Package Section
+- Package Details Page
+- Booking Page
+- Category Section
+- Testimonials Section
+- Popular Destinations Section
 
 ---
 
 ## Future Enhancements
 
-- Travel Package Booking System
-- Destination Search
-- User Dashboard
+- Wishlist Feature
 - Authentication Backend
 - Payment Gateway Integration
-- Wishlist Feature
+- User Dashboard
 - Booking History
 - Admin Dashboard
+- Travel Recommendation System
 - API Integration
 
 ---
@@ -183,5 +208,3 @@ Contributions are welcome.
 3. Commit your changes
 4. Push the branch
 5. Create a Pull Request
-
----
