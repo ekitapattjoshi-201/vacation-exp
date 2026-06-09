@@ -6,6 +6,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import {
     ArrowLeft01Icon,
     ArrowRight01Icon,
+    FavouriteIcon,
 } from "@hugeicons/core-free-icons";
 
 const TravelCard = () => {
@@ -36,15 +37,23 @@ const TravelCard = () => {
         },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [search, setSearch] = useState("");
+    const [currentIndex, setCurrentIndex] =
+        useState(0);
 
-    const filteredPackages = packages.filter(
-        (item) =>
+    const [search, setSearch] =
+        useState("");
+
+    const [wishlist, setWishlist] =
+        useState([]);
+
+    const filteredPackages =
+        packages.filter((item) =>
             item.title
                 .toLowerCase()
-                .includes(search.toLowerCase())
-    );
+                .includes(
+                    search.toLowerCase()
+                )
+        );
 
     const displayPackages =
         search.trim()
@@ -52,7 +61,9 @@ const TravelCard = () => {
             : packages;
 
     const currentPackage =
-        displayPackages[currentIndex] ||
+        displayPackages[
+        currentIndex
+        ] ||
         displayPackages[0];
 
     const handlePrevious = () => {
@@ -65,9 +76,21 @@ const TravelCard = () => {
 
     const handleNext = () => {
         setCurrentIndex((prev) =>
-            prev === displayPackages.length - 1
+            prev ===
+                displayPackages.length - 1
                 ? 0
                 : prev + 1
+        );
+    };
+
+    const handleWishlist = (id) => {
+        setWishlist((prev) =>
+            prev.includes(id)
+                ? prev.filter(
+                    (item) =>
+                        item !== id
+                )
+                : [...prev, id]
         );
     };
 
@@ -83,8 +106,12 @@ const TravelCard = () => {
                     placeholder="Search destination..."
                     value={search}
                     onChange={(e) => {
-                        setSearch(e.target.value);
-                        setCurrentIndex(0);
+                        setSearch(
+                            e.target.value
+                        );
+                        setCurrentIndex(
+                            0
+                        );
                     }}
                     className="travel-card-input"
                 />
@@ -97,18 +124,51 @@ const TravelCard = () => {
             ) : (
                 <div className="travel-card-item">
                     <img
-                        src={currentPackage.image}
-                        alt={currentPackage.title}
+                        src={
+                            currentPackage.image
+                        }
+                        alt={
+                            currentPackage.title
+                        }
                         className="travel-card-image"
                     />
 
                     <div className="travel-card-content">
-                        <h3>
-                            {currentPackage.title}
-                        </h3>
+                        <div className="travel-card-top">
+                            <h3>
+                                {
+                                    currentPackage.title
+                                }
+                            </h3>
+
+                            <button
+                                className={`travel-card-wishlist ${wishlist.includes(
+                                    currentPackage.id
+                                )
+                                        ? "travel-card-wishlist-active"
+                                        : ""
+                                    }`}
+                                onClick={() =>
+                                    handleWishlist(
+                                        currentPackage.id
+                                    )
+                                }
+                            >
+                                <HugeiconsIcon
+                                    icon={
+                                        FavouriteIcon
+                                    }
+                                    size={
+                                        28
+                                    }
+                                />
+                            </button>
+                        </div>
 
                         <p>
-                            {currentPackage.description}
+                            {
+                                currentPackage.description
+                            }
                         </p>
 
                         <div className="travel-card-buttons">
@@ -116,7 +176,8 @@ const TravelCard = () => {
                                 to={`/package/${currentPackage.id}`}
                             >
                                 <button className="travel-card-button">
-                                    Explore Destination
+                                    Explore
+                                    Destination
                                 </button>
                             </Link>
 
@@ -131,25 +192,33 @@ const TravelCard = () => {
                     <div className="travel-card-controls">
                         <button
                             className="travel-card-arrow"
-                            onClick={handlePrevious}
+                            onClick={
+                                handlePrevious
+                            }
                         >
                             <HugeiconsIcon
                                 icon={
                                     ArrowLeft01Icon
                                 }
-                                size={20}
+                                size={
+                                    20
+                                }
                             />
                         </button>
 
                         <button
                             className="travel-card-arrow"
-                            onClick={handleNext}
+                            onClick={
+                                handleNext
+                            }
                         >
                             <HugeiconsIcon
                                 icon={
                                     ArrowRight01Icon
                                 }
-                                size={20}
+                                size={
+                                    20
+                                }
                             />
                         </button>
                     </div>
