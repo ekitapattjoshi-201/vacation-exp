@@ -1,0 +1,80 @@
+.package-details {
+  padding: 5rem 2rem;
+  background-color: #f8fafc;
+}
+
+.package-details__card {
+  max-width: 100rem;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.package-details__image {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+}
+
+.package-details__content {
+  padding: 3rem;
+}
+
+.package-details__content h2 {
+  margin: 0 0 1.5rem;
+  font-size: 3rem;
+  color: #1f2937;
+}
+
+.package-details__description {
+  font-size: 1.6rem;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.package-details__info {
+  margin: 2rem 0;
+}
+
+.package-details__info p {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.package-details__places h3 {
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.package-details__places ul {
+  padding-left: 2rem;
+}
+
+.package-details__places li {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.package-details__button {
+  margin-top: 2rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.2rem 2rem;
+  background-color: #0f766e;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.package-details__button:hover {
+  background-color: #115e59;
+}
+
+.package-details__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}

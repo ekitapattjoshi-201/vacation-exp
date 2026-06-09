@@ -3,14 +3,14 @@
   background-color: #f8fafc;
 }
 
-.travel-card__heading {
+.travel-card-heading {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 3rem;
   color: #1f2937;
 }
 
-.travel-card__item {
+.travel-card-item {
   position: relative;
   width: 100%;
   max-width: 100rem;
@@ -20,7 +20,7 @@
   box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.1);
 }
 
-.travel-card__image {
+.travel-card-image {
   width: 100%;
   height: auto;
   max-height: 50rem;
@@ -28,7 +28,7 @@
   object-fit: cover;
 }
 
-.travel-card__content {
+.travel-card-content {
   position: absolute;
   bottom: 3rem;
   left: 3rem;
@@ -37,18 +37,18 @@
   color: #ffffff;
 }
 
-.travel-card__content h3 {
+.travel-card-content h3 {
   font-size: 3rem;
   margin: 0;
 }
 
-.travel-card__content p {
+.travel-card-content p {
   font-size: 1.6rem;
   margin: 1rem 0 2rem;
   line-height: 1.6;
 }
 
-.travel-card__button {
+.travel-card-button {
   border: none;
   border-radius: 1rem;
   padding: 1rem 2rem;
@@ -62,12 +62,19 @@
     transform 0.2s ease;
 }
 
-.travel-card__button:hover {
+.travel-card-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.travel-card-button:hover {
   background-color: #115e59;
   transform: translateY(-0.2rem);
 }
 
-.travel-card__controls {
+.travel-card-controls {
   position: absolute;
   top: 50%;
   width: 100%;
@@ -77,7 +84,7 @@
   transform: translateY(-50%);
 }
 
-.travel-card__arrow {
+.travel-card-arrow {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +100,34 @@
     transform 0.2s ease;
 }
 
-.travel-card__arrow:hover {
+.travel-card-arrow:hover {
   background-color: #115e59;
   transform: scale(1.05);
+}
+
+.travel-card-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.travel-card-input {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1.2rem 2rem;
+  border: 0.1rem solid #d1d5db;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.travel-card-input:focus {
+  border-color: #0f766e;
+}
+
+.travel-card-empty {
+  text-align: center;
+  font-size: 2rem;
+  color: #6b7280;
+  margin-top: 2rem;
 }
