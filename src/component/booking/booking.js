@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "./booking.css";
 
+const initialFormData = {
+    name: "",
+    email: "",
+    phone: "",
+    destination: "",
+    travelDate: "",
+    travelers: "",
+};
+
 const Booking = () => {
     const [formData, setFormData] =
-        useState({
-            name: "",
-            email: "",
-            phone: "",
-            destination: "",
-            travelDate: "",
-            travelers: "",
-        });
+        useState(initialFormData);
 
     const handleChange = (e) => {
         setFormData({
@@ -32,14 +34,9 @@ const Booking = () => {
             "Booking Submitted Successfully!"
         );
 
-        setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            destination: "",
-            travelDate: "",
-            travelers: "",
-        });
+        setFormData(
+            initialFormData
+        );
     };
 
     return (

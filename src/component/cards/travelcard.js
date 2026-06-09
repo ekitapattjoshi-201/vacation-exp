@@ -73,11 +73,11 @@ const TravelCard = () => {
 
     return (
         <div className="travel-card">
-            <h2 className="travel-card__heading">
+            <h2 className="travel-card-heading">
                 Popular Travel Packages
             </h2>
 
-            <div className="travel-card__search">
+            <div className="travel-card-search">
                 <input
                     type="text"
                     placeholder="Search destination..."
@@ -86,23 +86,23 @@ const TravelCard = () => {
                         setSearch(e.target.value);
                         setCurrentIndex(0);
                     }}
-                    className="travel-card__input"
+                    className="travel-card-input"
                 />
             </div>
 
             {!currentPackage ? (
-                <p className="travel-card__empty">
+                <p className="travel-card-empty">
                     No destination found
                 </p>
             ) : (
-                <div className="travel-card__item">
+                <div className="travel-card-item">
                     <img
                         src={currentPackage.image}
                         alt={currentPackage.title}
-                        className="travel-card__image"
+                        className="travel-card-image"
                     />
 
-                    <div className="travel-card__content">
+                    <div className="travel-card-content">
                         <h3>
                             {currentPackage.title}
                         </h3>
@@ -111,40 +111,44 @@ const TravelCard = () => {
                             {currentPackage.description}
                         </p>
 
-                        <div className="travel-card__buttons">
+                        <div className="travel-card-buttons">
                             <Link
                                 to={`/package/${currentPackage.id}`}
                             >
-                                <button className="travel-card__button">
+                                <button className="travel-card-button">
                                     Explore Destination
                                 </button>
                             </Link>
 
                             <Link to="/booking">
-                                <button className="travel-card__button">
+                                <button className="travel-card-button">
                                     Book Now
                                 </button>
                             </Link>
                         </div>
                     </div>
 
-                    <div className="travel-card__controls">
+                    <div className="travel-card-controls">
                         <button
-                            className="travel-card__arrow"
+                            className="travel-card-arrow"
                             onClick={handlePrevious}
                         >
                             <HugeiconsIcon
-                                icon={ArrowLeft01Icon}
+                                icon={
+                                    ArrowLeft01Icon
+                                }
                                 size={20}
                             />
                         </button>
 
                         <button
-                            className="travel-card__arrow"
+                            className="travel-card-arrow"
                             onClick={handleNext}
                         >
                             <HugeiconsIcon
-                                icon={ArrowRight01Icon}
+                                icon={
+                                    ArrowRight01Icon
+                                }
                                 size={20}
                             />
                         </button>
