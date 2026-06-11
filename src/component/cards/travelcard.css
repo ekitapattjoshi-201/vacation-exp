@@ -131,3 +131,26 @@
   color: #6b7280;
   margin-top: 2rem;
 }
+
+.travel-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.travel-card-wishlist {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  transition: 0.3s ease;
+}
+
+.travel-card-wishlist:hover {
+  transform: scale(1.1);
+}
+
+.travel-card-wishlist-active {
+  color: #ef4444;
+}
