@@ -139,12 +139,22 @@
 }
 
 .travel-card-wishlist {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 5rem;
+  height: 5rem;
   border: none;
-  background: transparent;
-  color: #ffffff;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  color: #ffffff;
   padding: 0;
   transition: 0.3s ease;
+  z-index: 2;
 }
 
 .travel-card-wishlist:hover {
@@ -153,4 +163,8 @@
 
 .travel-card-wishlist-active {
   color: #ef4444;
+}
+
+.travel-card-wishlist-active svg {
+  fill: #ef4444;
 }

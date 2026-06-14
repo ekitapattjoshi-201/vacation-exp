@@ -69,7 +69,8 @@ const TravelCard = () => {
     const handlePrevious = () => {
         setCurrentIndex((prev) =>
             prev === 0
-                ? displayPackages.length - 1
+                ? displayPackages.length -
+                1
                 : prev - 1
         );
     };
@@ -83,14 +84,33 @@ const TravelCard = () => {
         );
     };
 
-    const handleWishlist = (id) => {
-        setWishlist((prev) =>
-            prev.includes(id)
-                ? prev.filter(
+    const handleWishlist = (
+        id
+    ) => {
+        if (
+            wishlist.includes(id)
+        ) {
+            setWishlist((prev) =>
+                prev.filter(
                     (item) =>
                         item !== id
                 )
-                : [...prev, id]
+            );
+
+            alert(
+                "Destination removed from wishlist"
+            );
+
+            return;
+        }
+
+        setWishlist((prev) => [
+            ...prev,
+            id,
+        ]);
+
+        alert(
+            "Destination added to wishlist"
         );
     };
 
@@ -105,10 +125,13 @@ const TravelCard = () => {
                     type="text"
                     placeholder="Search destination..."
                     value={search}
-                    onChange={(e) => {
+                    onChange={(
+                        e
+                    ) => {
                         setSearch(
                             e.target.value
                         );
+
                         setCurrentIndex(
                             0
                         );
@@ -133,37 +156,38 @@ const TravelCard = () => {
                         className="travel-card-image"
                     />
 
-                    <div className="travel-card-content">
-                        <div className="travel-card-top">
-                            <h3>
-                                {
-                                    currentPackage.title
-                                }
-                            </h3>
-
-                            <button
-                                className={`travel-card-wishlist ${wishlist.includes(
+                    <button
+                        className={`travel-card-wishlist ${wishlist.includes(
+                            currentPackage.id
+                        )
+                            ? "travel-card-wishlist-active"
+                            : ""
+                            }`}
+                        onClick={() =>
+                            handleWishlist(
+                                currentPackage.id
+                            )
+                        }
+                    >
+                        <HugeiconsIcon
+                            icon={FavouriteIcon}
+                            size={28}
+                            fill={
+                                wishlist.includes(
                                     currentPackage.id
                                 )
-                                        ? "travel-card-wishlist-active"
-                                        : ""
-                                    }`}
-                                onClick={() =>
-                                    handleWishlist(
-                                        currentPackage.id
-                                    )
-                                }
-                            >
-                                <HugeiconsIcon
-                                    icon={
-                                        FavouriteIcon
-                                    }
-                                    size={
-                                        28
-                                    }
-                                />
-                            </button>
-                        </div>
+                                    ? "#ef4444"
+                                    : "none"
+                            }
+                        />
+                    </button>
+
+                    <div className="travel-card-content">
+                        <h3>
+                            {
+                                currentPackage.title
+                            }
+                        </h3>
 
                         <p>
                             {
@@ -176,8 +200,7 @@ const TravelCard = () => {
                                 to={`/package/${currentPackage.id}`}
                             >
                                 <button className="travel-card-button">
-                                    Explore
-                                    Destination
+                                    Explore Destination
                                 </button>
                             </Link>
 
@@ -200,9 +223,7 @@ const TravelCard = () => {
                                 icon={
                                     ArrowLeft01Icon
                                 }
-                                size={
-                                    20
-                                }
+                                size={20}
                             />
                         </button>
 
@@ -216,9 +237,7 @@ const TravelCard = () => {
                                 icon={
                                     ArrowRight01Icon
                                 }
-                                size={
-                                    20
-                                }
+                                size={20}
                             />
                         </button>
                     </div>
