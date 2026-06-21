@@ -11,7 +11,7 @@ import Footer from "./component/footer/footer.js";
 import TravelCard from "./component/cards/travelcard.js";
 import Hero from "./component/hero/hero.js";
 import { Fragment } from "react";
-import PackageDetails from "./component/package details/packageDetails.js";
+import PackageDetails from "./component/package-details/packageDetails.js";
 import Category from "./component/category/category.js";
 import Testimonials from "./component/testimonials/testimonials.js";
 import Destinations from "./component/destinations/destinations.js";

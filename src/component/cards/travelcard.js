@@ -6,6 +6,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import {
     ArrowLeft01Icon,
     ArrowRight01Icon,
+    FavouriteIcon,
 } from "@hugeicons/core-free-icons";
 
 const TravelCard = () => {
@@ -36,15 +37,23 @@ const TravelCard = () => {
         },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [search, setSearch] = useState("");
+    const [currentIndex, setCurrentIndex] =
+        useState(0);
 
-    const filteredPackages = packages.filter(
-        (item) =>
+    const [search, setSearch] =
+        useState("");
+
+    const [wishlist, setWishlist] =
+        useState([]);
+
+    const filteredPackages =
+        packages.filter((item) =>
             item.title
                 .toLowerCase()
-                .includes(search.toLowerCase())
-    );
+                .includes(
+                    search.toLowerCase()
+                )
+        );
 
     const displayPackages =
         search.trim()
@@ -52,22 +61,56 @@ const TravelCard = () => {
             : packages;
 
     const currentPackage =
-        displayPackages[currentIndex] ||
+        displayPackages[
+        currentIndex
+        ] ||
         displayPackages[0];
 
     const handlePrevious = () => {
         setCurrentIndex((prev) =>
             prev === 0
-                ? displayPackages.length - 1
+                ? displayPackages.length -
+                1
                 : prev - 1
         );
     };
 
     const handleNext = () => {
         setCurrentIndex((prev) =>
-            prev === displayPackages.length - 1
+            prev ===
+                displayPackages.length - 1
                 ? 0
                 : prev + 1
+        );
+    };
+
+    const handleWishlist = (
+        id
+    ) => {
+        if (
+            wishlist.includes(id)
+        ) {
+            setWishlist((prev) =>
+                prev.filter(
+                    (item) =>
+                        item !== id
+                )
+            );
+
+            alert(
+                "Destination removed from wishlist"
+            );
+
+            return;
+        }
+
+        setWishlist((prev) => [
+            ...prev,
+            id,
+        ]);
+
+        alert(
+            "Destination added to wishlist"
         );
     };
 
@@ -82,9 +125,16 @@ const TravelCard = () => {
                     type="text"
                     placeholder="Search destination..."
                     value={search}
-                    onChange={(e) => {
-                        setSearch(e.target.value);
-                        setCurrentIndex(0);
+                    onChange={(
+                        e
+                    ) => {
+                        setSearch(
+                            e.target.value
+                        );
+
+                        setCurrentIndex(
+                            0
+                        );
                     }}
                     className="travel-card-input"
                 />
@@ -97,18 +147,52 @@ const TravelCard = () => {
             ) : (
                 <div className="travel-card-item">
                     <img
-                        src={currentPackage.image}
-                        alt={currentPackage.title}
+                        src={
+                            currentPackage.image
+                        }
+                        alt={
+                            currentPackage.title
+                        }
                         className="travel-card-image"
                     />
 
+                    <button
+                        className={`travel-card-wishlist ${wishlist.includes(
+                            currentPackage.id
+                        )
+                            ? "travel-card-wishlist-active"
+                            : ""
+                            }`}
+                        onClick={() =>
+                            handleWishlist(
+                                currentPackage.id
+                            )
+                        }
+                    >
+                        <HugeiconsIcon
+                            icon={FavouriteIcon}
+                            size={28}
+                            fill={
+                                wishlist.includes(
+                                    currentPackage.id
+                                )
+                                    ? "#ef4444"
+                                    : "none"
+                            }
+                        />
+                    </button>
+
                     <div className="travel-card-content">
                         <h3>
-                            {currentPackage.title}
+                            {
+                                currentPackage.title
+                            }
                         </h3>
 
                         <p>
-                            {currentPackage.description}
+                            {
+                                currentPackage.description
+                            }
                         </p>
 
                         <div className="travel-card-buttons">
@@ -131,7 +215,9 @@ const TravelCard = () => {
                     <div className="travel-card-controls">
                         <button
                             className="travel-card-arrow"
-                            onClick={handlePrevious}
+                            onClick={
+                                handlePrevious
+                            }
                         >
                             <HugeiconsIcon
                                 icon={
@@ -143,7 +229,9 @@ const TravelCard = () => {
 
                         <button
                             className="travel-card-arrow"
-                            onClick={handleNext}
+                            onClick={
+                                handleNext
+                            }
                         >
                             <HugeiconsIcon
                                 icon={
