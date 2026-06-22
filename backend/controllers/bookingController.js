@@ -5,10 +5,39 @@ const createBooking = async (
     res
 ) => {
     try {
+        const {
+            name,
+            email,
+            phone,
+            destination,
+            travelDate,
+            travelers,
+        } = req.body;
+
+        if (
+            !name ||
+            !email ||
+            !phone ||
+            !destination ||
+            !travelDate ||
+            !travelers
+        ) {
+            return res.status(400).json({
+                success: false,
+                message:
+                    "All fields are required",
+            });
+        }
+
         const booking =
-            await Booking.create(
-                req.body
-            );
+            await Booking.create({
+                name,
+                email,
+                phone,
+                destination,
+                travelDate,
+                travelers,
+            });
 
         res.status(201).json({
             success: true,
